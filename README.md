@@ -74,6 +74,9 @@ public/
 - Images referenced in components (e.g. `bs1.avif`, `bs2.avif`, `bs3.avif`, testimonial and newsletter background images) should be placed in the `public/` folder and referenced with a leading `/` (e.g. `/bs1.avif`), not `/public/bs1.avif`.
 - Animations use Framer Motion's `whileInView` with `viewport={{ once: true }}`, so each section animates in once when scrolled into view and does not replay on re-scroll.
 
+## Live Demo
+https://landlinger-landingpage.vercel.app/
+
 ## License
 
 This project is private and not licensed for public reuse.
