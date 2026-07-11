@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 function Pricing() {
     return (
-        <section className="bg-[#F3F1E7] px-6 py-16 md:px-10 lg:px-16 lg:py-24">
+        <section id="pricing" className="bg-[#F3F1E7] px-6 py-16 md:px-10 lg:px-16 lg:py-24">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
                 {/* Left side */}

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 function Features() {
     return (
-        <section className="bg-[#F3F1E7] px-6 py-16 md:px-10 lg:px-16 lg:py-24">
+        <section id="features" className="bg-[#F3F1E7] px-6 py-16 md:px-10 lg:px-16 lg:py-24">
 
             {/* Header */}
             <motion.div

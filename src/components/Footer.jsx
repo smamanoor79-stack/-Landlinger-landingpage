@@ -5,7 +5,7 @@ const companyLinks = ["About", "Request a Demo", "Blog", "Contact", "FAQs", "Pri
 
 function Footer() {
     return (
-        <footer className="bg-[#06231D] px-6 py-16 md:px-10 lg:px-16 lg:py-20">
+        <footer  className="bg-[#06231D] px-6 py-16 md:px-10 lg:px-16 lg:py-20">
             <motion.div
                 className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 mb-12"
                 initial={{ opacity: 0, y: 30 }}

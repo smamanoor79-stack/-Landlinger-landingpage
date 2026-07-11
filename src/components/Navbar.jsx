@@ -20,16 +20,16 @@ function Navbar() {
           <a href="#home" className="text-gray-900 hover:text-gray-600">
             Home
           </a>
-          <a href="#product" className="hover:text-gray-600">
-            Product
+          <a href="#features" className="hover:text-gray-600">
+            Features
           </a>
-          <a href="#pages" className="hover:text-gray-600">
-            Pages
+          <a href="#pricing" className="hover:text-gray-600">
+            Pricing
           </a>
-          <a href="#account" className="hover:text-gray-600">
-            Account
+          <a href="#testimonials" className="hover:text-gray-600">
+            Testimonials
           </a>
-          <a href="#contact" className="hover:text-gray-600">
+          <a href= "#Contact" className="hover:text-gray-600">
             Contact us
           </a>
         </div>
@@ -65,14 +65,14 @@ function Navbar() {
           <a href="#home" className="text-gray-900" onClick={() => setIsOpen(false)}>
             Home
           </a>
-          <a href="#product" onClick={() => setIsOpen(false)}>
-            Product
+          <a href="#features" onClick={() => setIsOpen(false)}>
+            Features
           </a>
-          <a href="#pages" onClick={() => setIsOpen(false)}>
-            Pages
+          <a href="#pricing" onClick={() => setIsOpen(false)}>
+            Pricing
           </a>
-          <a href="#account" onClick={() => setIsOpen(false)}>
-            Account
+          <a href="#testimonials" onClick={() => setIsOpen(false)}>
+            Testimonials
           </a>
           <a href="#contact" onClick={() => setIsOpen(false)}>
             Contact us

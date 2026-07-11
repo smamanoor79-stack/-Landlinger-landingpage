@@ -7,6 +7,7 @@ import BusinessSuccess from "./components/BusinessSuccess";
 import Stats from "./components/Stats";
 import Testimonials from "./components/Testimonials";
 import Newsletter from "./components/Newsletter";
+import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 
@@ -22,6 +23,7 @@ function App() {
        <Stats/>
        <Testimonials/>
        <Newsletter/>
+       <Contact />
        <Footer/>
 
     </div>

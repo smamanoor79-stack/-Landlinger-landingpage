@@ -1,6 +1,6 @@
 function Hero() {
     return (
-        <section className="bg-[#06231D] px-6 pt-28 pb-16 md:px-10 lg:px-16 lg:pt-40 lg:pb-20">
+        <section  className="bg-[#06231D] px-6 pt-28 pb-16 md:px-10 lg:px-16 lg:pt-40 lg:pb-20">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-start">
 
                 {/* Left side content */}
