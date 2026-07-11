@@ -35,14 +35,13 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: connect this to your backend / email service
     console.log("Form submitted:", formData);
     setSubmitted(true);
     setFormData({ name: "", email: "", message: "" });
   };
 
   return (
-    <section className="bg-[#F4F1E8] py-20 px-6 md:px-16">
+    <section id="contact" className="bg-[#F4F1E8] py-20 px-6 md:px-16">
       {/* Eyebrow + Heading */}
       <div className="text-center max-w-2xl mx-auto mb-14">
         <motion.span

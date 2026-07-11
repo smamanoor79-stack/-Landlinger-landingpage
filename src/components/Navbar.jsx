@@ -29,7 +29,7 @@ function Navbar() {
           <a href="#testimonials" className="hover:text-gray-600">
             Testimonials
           </a>
-          <a href= "#Contact" className="hover:text-gray-600">
+          <a href= "#contact" className="hover:text-gray-600">
             Contact us
           </a>
         </div>
