@@ -23,18 +23,15 @@ export async function POST(request) {
         { status: 500 }
       );
     }
-
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-    const { plan } = await request.json();
+    const { plan, trial } = await request.json();
     const selectedPlan = PLANS[plan];
-
     if (!selectedPlan) {
       return NextResponse.json({ error: "Invalid plan selected." }, { status: 400 });
     }
-
     const origin = request.headers.get("origin") || process.env.NEXT_PUBLIC_BASE_URL;
 
-    const session = await stripe.checkout.sessions.create({
+    const sessionConfig = {
       mode: "subscription",
       payment_method_types: ["card"],
       line_items: [
@@ -50,7 +47,15 @@ export async function POST(request) {
       ],
       success_url: `${origin}/?checkout=success`,
       cancel_url: `${origin}/?checkout=cancelled`,
-    });
+    };
+
+    if (trial) {
+      sessionConfig.subscription_data = {
+        trial_period_days: 7,
+      };
+    }
+
+    const session = await stripe.checkout.sessions.create(sessionConfig);
 
     return NextResponse.json({ url: session.url });
   } catch (error) {
