@@ -13,7 +13,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="relative bg-white px-6 py-5 md:px-10 lg:px-16 lg:py-8">
+    <nav className="sticky top-0 z-50 bg-white px-6 py-5 md:px-10 lg:px-16 lg:py-8">
       <div className="flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2">
