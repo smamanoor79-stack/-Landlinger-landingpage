@@ -1,32 +1,55 @@
 'use client';
+import { useState } from "react";
 
 function Hero() {
+    const [loading, setLoading] = useState(false);
+
+    const handleTryForFree = async () => {
+        setLoading(true);
+        try {
+            const res = await fetch("/api/checkout", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ plan: "basic", trial: true }),
+            });
+            const data = await res.json();
+            if (data.url) {
+                window.location.href = data.url;
+            } else {
+                console.error("No checkout URL returned:", data);
+                setLoading(false);
+            }
+        } catch (err) {
+            console.error("Trial checkout error:", err);
+            setLoading(false);
+        }
+    };
+
     return (
         <section  className="bg-[#06231D] px-6 pt-28 pb-16 md:px-10 lg:px-16 lg:pt-40 lg:pb-20">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-start">
-
                 {/* Left side content */}
                 <div>
                     {/* Badge */}
                     <span className="inline-block bg-lime-300 text-gray-900 text-xs sm:text-sm font-medium px-4 py-1.5 rounded-full mb-6">
                         Revolutionize your workflow
                     </span>
-
                     {/* Heading */}
                     <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
                         Intuitive solutions for complex challenges
                     </h1>
-
                     {/* Subtext */}
                     <p className="text-gray-300 text-base md:text-lg mb-8 max-w-md">
                         Streamline your processes and enhance productivity with our all-in-one solution.
                     </p>
-
                     {/* CTA Button */}
-                    <button className="bg-white text-gray-900 font-semibold px-8 py-3 rounded-full mb-10 hover:bg-lime-300 transition w-full sm:w-auto">
-                        Try for free
+                    <button
+                        onClick={handleTryForFree}
+                        disabled={loading}
+                        className="bg-white text-gray-900 font-semibold px-8 py-3 rounded-full mb-10 hover:bg-lime-300 transition w-full sm:w-auto disabled:opacity-60"
+                    >
+                        {loading ? "Loading..." : "Try for free"}
                     </button>
-
                     {/* Ratings */}
                     <div className="flex flex-col xs:flex-row sm:flex-row items-start sm:items-center gap-4 sm:gap-8">
                         <div className="flex items-center gap-2 text-white">
@@ -43,7 +66,6 @@ function Hero() {
                         </div>
                     </div>
                 </div>
-
                 {/* Right side - Image with floating card */}
                 <div className="relative">
                     <img
@@ -65,10 +87,8 @@ function Hero() {
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
     )
 }
-
 export default Hero
